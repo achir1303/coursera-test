@@ -5,7 +5,7 @@ angular.module('ChineseMenuApp', [])
 .controller('ChineseMenuController', ChineseMenuController)
 .service('ChineseMenuService', ChineseMenuService)
 .directive('foundItems', FoundListDirective)
-.constant('ApiBasePath', "http://davids-restaurant.herokuapp.com");
+.constant('ApiBasePath', "https://davids-restaurant.herokuapp.com");
 
 
 function FoundListDirective() {
