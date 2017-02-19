@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" ng-app='ChineseMenuApp'>
+  <head>
+    <title>Narrow Down Your Menu Choice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+<body>
+   <div class="container" ng-controller='ChineseMenuController as list'>
+    <h1>Narrow Down Your Chinese Menu Choice</h1>
+
+    <div class="form-group">
+      <input type="text" placeholder="search term" ng-model="list.searchTerm" class="form-control">
+    </div>
+    <div class="form-group narrow-button">
+      <button class="btn btn-primary" ng-click="list.findItems(searchTerm);">Narrow It Down For Me!</button>
+    </div>
+
+
+   <!-- found-items should be implemented as a component -->
+   <br><br><br>
+
+   <div>
+    <found-items menu-items="list.menuItems" on-remove="list.removeItem(index)"></found-items>
+    </div>
+    
+  </div>
+
+</body>
+</html>
