@@ -28,7 +28,10 @@ function FoundListDirectiveController() {
   var list = this;
 
   list.itemsInList = function () {
-    if(list.menuItems.length > 0){
+
+  console.log(list.menuItems)
+  
+   if(list.menuItems !== undefined && list.menuItems.length > 0){
       return true;
     }
     return false;
@@ -39,9 +42,7 @@ function FoundListDirectiveController() {
 ChineseMenuController.$inject = ['ChineseMenuService'];
 function ChineseMenuController(ChineseMenuService) {
   var list = this;
-
-  list.menuItems = ChineseMenuService.getItems();
-
+  list.first = true;
 
   list.findItems = function(searchTerm) {
   ChineseMenuService.clearItems();
@@ -51,7 +52,7 @@ function ChineseMenuController(ChineseMenuService) {
 
   promise.then(function (response) {
    
-
+    //list.first = false;
 if(list.searchTerm !== undefined && list.searchTerm !== "") {
 
     for(var i=0;i < response.data.menu_items.length;i++) {
